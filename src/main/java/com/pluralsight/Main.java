@@ -5,24 +5,25 @@ public class Main {
     public static void main(String[] args) {
         Scanner read = new Scanner(System.in);
         double discount = 0;
-        char firstOption = 'a';
-        char secondOption = 'b';
+        double sando1 = 5.45;
+        double sando2 = 8.95;
+
 
         System.out.println("Welcome to Ron's Sandwich Shop!");
-        System.out.println("Which size would you like? a or b");
-        float optionChoice = read.nextFloat();
+        System.out.println("Which size would you like? 1 or 2");
+        double optionChoice = read.nextInt();
 
-        if optionChoice (equals 'a'); {
-            optionChoice = firstOption;
+        if (optionChoice == 1) {
+            optionChoice = sando1;
+            System.out.println("You chose option 1.");
         }
         else {
-            optionChoice = secondOption;
-        }
-
-        System.out.printf("Of course. %c on the way!", optionChoice);
+            optionChoice = sando2;
+            System.out.println("You chose option 2.");
+        };
 
 //        This code is currently not working as intended
-        System.out.println("How old are you by chance?");
+        System.out.println("\nHow old are you by chance?");
         int age = read.nextInt();
         if (age <= 17) {
             discount = 0.1;
@@ -35,7 +36,13 @@ public class Main {
             discount = 0;
         }
 
-        System.out.printf("Sounds good! Because you are %d we'll be providing a %f discount!", age, discount);
+
+        System.out.printf("Sounds good! Because you are %d we'll be providing a %.2f percent discount!", age, discount);
+
+        double discountedAmount = optionChoice * discount;
+        double totalCost = optionChoice - discountedAmount;
+
+        System.out.printf("\nYour total today will be: $%.2f", totalCost);
 
         read.close();
 
