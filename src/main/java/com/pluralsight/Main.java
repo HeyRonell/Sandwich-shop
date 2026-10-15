@@ -5,21 +5,21 @@ public class Main {
     public static void main(String[] args) {
         Scanner read = new Scanner(System.in);
         double discount = 0;
-        double sando1 = 5.45;
-        double sando2 = 8.95;
-        double loadedAdditional = 0.00;
+        double regSando = 5.45;
+        double lrgSando = 8.95;
+        double loadedAdd = 0.00;
 
-
+//        First ask of customer.
         System.out.println("Welcome to Ron's Sandwich Shop!");
         System.out.println("Which size would you like? 1 or 2");
         double optionChoice = read.nextInt();
 
 //        Determining which sandwich the customer wants.
         if (optionChoice == 1) {
-            optionChoice = sando1;
+            optionChoice = regSando;
             System.out.println("You chose option 1.");
         } else {
-            optionChoice = sando2;
+            optionChoice = lrgSando;
             System.out.println("You chose option 2.");
         }
 
@@ -29,14 +29,14 @@ public class Main {
         System.out.println("Would you like it LOADED?");
         String isLoaded = read.nextLine();
         if (isLoaded.equalsIgnoreCase("yes")) {
-            if (optionChoice == sando1) {
-                loadedAdditional = 1.00;
+            if (optionChoice == regSando) {
+                loadedAdd = 1.00;
             }
-            else if (optionChoice == sando2) {
-                loadedAdditional = 1.75;
+            else if (optionChoice == lrgSando) {
+                loadedAdd = 1.75;
             }
             else {
-                loadedAdditional = 0;
+                loadedAdd = 0;
                 System.out.println("We'll keep it regular.");
             }
 
@@ -56,8 +56,8 @@ public class Main {
             System.out.printf("Sounds good! Because you are %d we'll be providing a %.2f percent discount!", age, discount);
 
 //        Calculating the information provided.
-            double discountedAmount = (optionChoice + loadedAdditional) * discount;
-            double totalCost = (optionChoice + loadedAdditional) - discountedAmount;
+            double discountedAmount = (optionChoice + loadedAdd) * discount;
+            double totalCost = (optionChoice + loadedAdd) - discountedAmount;
 
 //
             System.out.printf("\nYour total today will be: $%.2f", totalCost);
