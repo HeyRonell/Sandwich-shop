@@ -25,7 +25,7 @@ public class Main {
 
         read.nextLine();
 
-//        This will add an additional cost. Only accepts true or false.
+//        This will add an additional cost. Should accept yes regardless of case sensitivity.
         System.out.println("Would you like it LOADED?");
         String isLoaded = read.nextLine();
         if (isLoaded.equalsIgnoreCase("yes")) {
@@ -40,7 +40,7 @@ public class Main {
                 System.out.println("We'll keep it regular.");
             }
 
-
+//            Asking the user for age verification to apply appropriate discounts.
             System.out.println("\nHow old are you by chance?");
             int age = read.nextInt();
             if (age <= 17) {
@@ -59,6 +59,7 @@ public class Main {
             double discountedAmount = (optionChoice + loadedAdditional) * discount;
             double totalCost = (optionChoice + loadedAdditional) - discountedAmount;
 
+//
             System.out.printf("\nYour total today will be: $%.2f", totalCost);
 
             read.close();
